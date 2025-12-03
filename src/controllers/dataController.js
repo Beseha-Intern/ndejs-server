@@ -122,7 +122,6 @@ export const getFileData = (req, res) => {
     try {
         const { type, filename } = req.params;
         
-        // FIXED: استخدام import بدلاً من require
         const filePath = path.join("./data", type, filename);
         
         if (!fs.existsSync(filePath)) {

@@ -46,12 +46,12 @@ app.use("/data", dataRoutes);
 app.use(errorHandler);
 
 // Start server
-app.listen(PORT, "127.0.0.1", () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log("=".repeat(50));
     console.log("MARFOOF DATA RECEIVER");
     console.log("=".repeat(50));
-    console.log(`Server running at: http://127.0.0.1:${PORT}`);
+    console.log(`Server running at: http://0.0.0.0:${PORT}`);
     console.log(`Data directory: ${path.resolve(DATA_DIR)}`);
-    console.log(`API Key: ${process.env.API_KEY || 'marfoof-default-key-12345'}`);
+    console.log(`API Key: ${process.env.API_KEY ? '***' : 'not set' }`);
     console.log("=".repeat(50));
 });
